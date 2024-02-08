@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #0066CC;
+}
+.style1 {color: #FFFFFF}
+.style2 {color: #393939}
+a:link {
+	color: #FFFFFF;
+}
+a:visited {
+	color: #FFFFFF;
+}
+a:hover {
+	color: #FFFFFF;
+}
+a:active {
+	color: #FFFFFF;
+}
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_jumpMenuGo(selName,targ,restore){ //v3.0
+  var selObj = MM_findObj(selName); if (selObj) MM_jumpMenu(targ,selObj,restore);
+}
+//-->
+</script>
+</head>
+
+<body>
+<p class="style1"><span class="style2"><a href="Informacion_inicio.html" target="mainFrame">Inicio</a></span></p>
+<p class="style2"><a href="Que_es.html" target="mainFrame">&iquest;Que es?</a></p>
+<p class="style2"><a href="Importancia.html" target="mainFrame">Importancia</a></p>
+<p class="style2"><a href="Beneficios.html" target="mainFrame">Beneficios</a></p>
+<p class="style2"><a href="Caracter&iacute;sticas.html" target="mainFrame">Caracteristicas</a></p>
+<p class="style1"><span class="style2"><a href="informacion_basededatos.html" target="mainFrame">Base de Dato</a></span><a href="informacion_basededatos.html" target="mainFrame">s</a> </p>
+<form name="form1" id="form1">
+  <select name="menu1" onchange="MM_jumpMenu('parent',this,1)">
+    <option value="Ingresar.html"></option>
+  </select>
+  <input type="button" name="Button1" value="Salir" onclick="MM_jumpMenuGo('menu1','parent',1)" />
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

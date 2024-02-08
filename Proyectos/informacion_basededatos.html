@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-image: url(Imagenes/aasdsad.jpg);
+}
+.style3 {color: #FFFFFF}
+.style4 {color: #00FF00}
+.style5 {color: #00FF33; }
+-->
+</style></head>
+
+<body>
+<p class="style3"><img src="Imagenes/logo.jpg" alt="logo" width="88" height="59" /></p>
+<p class="style3">PHP se utiliza com&uacute;nmente en combinaci&oacute;n con sistemas de gesti&oacute;n de bases de datos (SGBD) para crear aplicaciones web din&aacute;micas que almacenan y recuperan informaci&oacute;n de una base de datos. Aqu&iacute; hay una descripci&oacute;n b&aacute;sica de c&oacute;mo PHP interact&uacute;a con bases de datos:</p>
+<ol class="style3">
+  <li>
+    <p><strong>Conexi&oacute;n a la Base de Datos:</strong></p>
+    <ul>
+      <li>Antes de realizar operaciones en una base de datos, es necesario establecer una conexi&oacute;n entre PHP y el SGBD. Esto se hace utilizando funciones como mysqli_connect o PDO (PHP Data Objects) en el caso de MySQL. Debes proporcionar detalles como el nombre de host, el nombre de usuario, la contrase&ntilde;a y el nombre de la base de datos.</li>
+    </ul>
+  </li>
+</ol>
+<p>&nbsp;</p>
+<p class="style3"> $conexion = mysqli_connect(&quot;localhost&quot;, &quot;usuario&quot;, &quot;contrase&ntilde;a&quot;, &quot;basededatos&quot;);</p>
+<p class="style3"><strong>Ejecuci&oacute;n de Consultas SQL:</strong></p>
+<ul class="style3">
+  <li>Una vez establecida la conexi&oacute;n, puedes ejecutar consultas SQL para interactuar con la base de datos. Esto puede incluir la inserci&oacute;n de nuevos datos, la actualizaci&oacute;n de registros existentes o la recuperaci&oacute;n de informaci&oacute;n.</li>
+</ul>
+<p class="style4">$consulta = &quot;SELECT * FROM usuarios&quot;;</p>
+<p class="style4"> $resultado = mysqli_query($conexion, $consulta);</p>
+<p class="style3">&nbsp;</p>
+<p class="style3"><strong>Recuperaci&oacute;n de Datos:</strong></p>
+<ul class="style3">
+  <li>Despu&eacute;s de ejecutar una consulta SELECT, puedes recuperar los datos obtenidos. Esto se hace generalmente a trav&eacute;s de un bucle mientras se recorren los resultados.</li>
+</ul>
+<p class="style4">while ($fila = mysqli_fetch_assoc($resultado)) {</p>
+<p class="style4"> echo &quot;Nombre: &quot; . $fila[&quot;nombre&quot;] . &quot;&lt;br&gt;&quot;;  </p>
+<p class="style4">}</p>
+<p class="style3"><strong>Inserci&oacute;n de Datos:</strong></p>
+<ul class="style3">
+  <li>Para insertar nuevos datos en la base de datos, puedes ejecutar una consulta INSERT.</li>
+</ul>
+<p class="style3">$nuevo_usuario = &quot;INSERT INTO usuarios (nombre, correo) VALUES ('John Doe', 'john@example.com')&quot;;<br />
+mysqli_query($conexion, $nuevo_usuario);</p>
+<p class="style3"><strong>Actualizaci&oacute;n y Eliminaci&oacute;n de Datos:</strong></p>
+<ul class="style3">
+  <li>Las consultas UPDATE y DELETE se utilizan para modificar o eliminar registros existentes.</li>
+</ul>
+<p class="style5">$actualizar_usuario = &quot;UPDATE usuarios SET nombre='Jane Doe' WHERE id=1&quot;;<br />
+  mysqli_query($conexion, $actualizar_usuario);</p>
+<p class="style3"><span class="style5">$eliminar_usuario = &quot;DELETE FROM usuarios WHERE id=2&quot;;<br />
+  mysqli_query($conexion, $eliminar_usuario);</span><br />
+</p>
+<p class="style3"><strong><img src="Imagenes/aasdad.png" alt="tablas" width="378" height="248" /></strong></p>
+<p class="style3">&nbsp;</p>
+<p class="style3"><strong>Cierre de la Conexi&oacute;n:</strong></p>
+<ul class="style3"><li>Es importante cerrar la conexi&oacute;n a la base de datos cuando ya no se necesite. Esto libera recursos y evita problemas de rendimiento.</li>
+</ul>
+<span class="style3">mysqli_close($conexion);<br />
+</span>
+<p class="style3"><strong>Uso de Prepared Statements (Sentencias Preparadas):</strong></p>
+<ul class="style3">
+  <li>Para mejorar la seguridad y prevenir ataques de inyecci&oacute;n SQL, se recomienda el uso de sentencias preparadas. Esto se puede lograr utilizando PDO o las funciones mysqli_prepare y mysqli_stmt_bind_param en MySQLi.</li>
+</ul>
+<span class="style3"><span class="style4">$consulta_preparada = $conexion-&gt;prepare(&quot;INSERT INTO usuarios (nombre, correo) VALUES (?, ?)&quot;);<br />
+$nombre = &quot;John Doe&quot;;<br />
+$correo = &quot;john@example.com&quot;;<br />
+$consulta_preparada-&gt;bind_param(&quot;ss&quot;, $nombre, $correo);<br />
+$consulta_preparada-&gt;execute();</span><br />
+</span>
+<p class="style3"><br />
+  <img src="Videos/asssssa.gif" alt="elgif" width="498" height="373" /></p>
+<p class="style3">&nbsp;</p>
+<p class="style3">&nbsp;</p>
+</body>
+</html>
